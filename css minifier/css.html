@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Minifier</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 300px; /* Increased height for the input and output textareas */
+            margin: 10px 0;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px; /* Adjust font size as needed */
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px; /* Increased margin for better spacing */
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 16px 32px; /* Increased padding for larger buttons */
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px; /* Increased font size for buttons */
+            margin: 0 10px; /* Increased margin for better spacing */
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #outputText {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CSS Minifier</h1>
+        <textarea id="inputText" placeholder="Enter CSS code"></textarea>
+        <div class="buttons">
+            <button onclick="minifyCSS()">Minify CSS</button>
+        </div>
+        <textarea id="outputText" placeholder="Minified CSS will appear here" readonly></textarea>
+    </div>
+
+    <script>
+        function minifyCSS() {
+            var inputCSS = document.getElementById('inputText').value;
+            var outputCSS = inputCSS.replace(/\/\*[\s\S]*?\*\/|[\r\n\t]+/g, ''); // Minify CSS by removing comments and unnecessary whitespace
+            document.getElementById('outputText').value = outputCSS;
+        }
+    </script>
+</body>
+</html>

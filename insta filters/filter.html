@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Filters</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Instagram Filters</h1>
+    <label for="imageUpload">Upload an Image:</label>
+    <input type="file" id="imageUpload" accept="image/*" onchange="loadImage(event)">
+    <div id="imageDisplay"></div>
+    <div class="filters">
+        <button onclick="applyFilter('none')">Normal</button>
+        <button onclick="applyFilter('grayscale(100%)')">Grayscale</button>
+        <button onclick="applyFilter('sepia(100%)')">Sepia</button>
+        <button onclick="applyFilter('blur(5px)')">Blur</button>
+        <button onclick="applyFilter('contrast(200%)')">Contrast</button>
+        <button onclick="applyFilter('hue-rotate(90deg)')">Hue Rotate</button>
+        <button onclick="applyFilter('invert(100%)')">Invert</button>
+        <button onclick="applyFilter('brightness(150%)')">Brightness</button>
+        <button onclick="applyFilter('saturate(200%)')">Saturate</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

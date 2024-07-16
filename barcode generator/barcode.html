@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Barcode Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Barcode Generator</h1>
+        <form id="barcodeForm">
+            <label for="barcodeValue">Value:</label>
+            <input type="text" id="barcodeValue" required>
+            
+            <label for="barcodeFormat">Barcode Format:</label>
+            <select id="barcodeFormat" required>
+                <option value="upc">UPC-A</option>
+                <option value="upce">UPC-E</option>
+                <option value="ean8">EAN-8</option>
+                <option value="ean13">EAN-13</option>
+                <option value="code39">Code 39</option>
+                <option value="code93">Code 93</option>
+                <option value="code128">Code 128</option>
+                <option value="itf">ITF</option>
+                <option value="codabar">Codabar</option>
+                <option value="msi">MSI Plessey</option>
+                <option value="qrcode">QR Code</option>
+                <option value="datamatrix">Data Matrix</option>
+                <option value="pdf417">PDF417</option>
+                <option value="aztec">Aztec Code</option>
+            </select>
+            
+            <label for="barcodeWidth">Width (px):</label>
+            <input type="number" id="barcodeWidth" value="2" min="1">
+            
+            <label for="barcodeHeight">Height (px):</label>
+            <input type="number" id="barcodeHeight" value="100" min="1">
+            
+            <button type="button" onclick="generateBarcode()">Generate Barcode</button>
+            <button type="button" onclick="resetForm()">Reset</button>
+            <button type="button" onclick="downloadBarcode()">Download Barcode</button>
+        </form>
+        
+        <div id="barcodeOutput"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
